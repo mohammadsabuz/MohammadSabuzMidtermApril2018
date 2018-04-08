@@ -22,9 +22,10 @@ public class Numbers {
 
 	public static void main(String[] args) throws Exception {
 		
-		int [] num = new int[1000000];
+		int [] num = new int[10];
 		storeRandomNumbers(num);
 		ConnectDB connectDB = new ConnectDB();
+
 		//Selection Sort
 		Sort algo = new Sort();
 		algo.selectionSort(num);
@@ -35,27 +36,40 @@ public class Numbers {
         printValue(numbers);
 		int n = num.length;
 		randomize (num, n);
-		//Insertion Sort
-		algo.insertionSort(num);
-		long insertionSortExecutionTime = algo.executionTime;
-		System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort take: " + insertionSortExecutionTime + " milli sec");
-
-		//By following above, Continue for rest of the Sorting Algorithm....
-
-
-
 
 		//Come to conclusion about which Sorting Algo is better in given data set.
 
-	}
+		//Insertion Sort
+		algo.insertionSort(num);
+		long insertionSortExecutionTime = algo.executionTime;
+		System.out.println("Total Execution Time " + num.length + " numbers in Insertion Sort takes: " + insertionSortExecutionTime + " milli sec");
 
+		// Bubble Sort
+		algo.insertionSort(num);
+		long bubbleSortExecutionTime = algo.executionTime;
+		System.out.println("Total Execution Time " + num.length + " numbers in Bubble Sort takes: " + bubbleSortExecutionTime + " milli sec");
+
+		// Quick Sort
+//		algo.quickSort(num, findLow[num], findHigh[num]);
+//		long quickSortExecutionTime = algo.executionTime;
+//		System.out.println("Total Execution Time " + num.length + " numbers in Quick Sort takes: " + quickSortExecutionTime + " milli sec");
+
+		// Heap Sort
+		algo.heapSort(num);
+		long heapSortExecutionTime = algo.executionTime;
+		System.out.println("Total Execution Time " + num.length + " numbers in Heap Sort takes: " + heapSortExecutionTime + " milli sec");
+
+		// Bucket Sort
+		algo.bucketSort(num);
+		long bucketSortExecutionTime = algo.executionTime;
+		System.out.println("Total Execution Time " + num.length + " numbers in Bucket Sort takes: " + bucketSortExecutionTime + " milli sec");
+	}
 	public static void storeRandomNumbers(int [] num){
 		Random rand = new Random();
 		for(int i=0; i<num.length; i++){
-			num[i] = rand.nextInt(1000000);
+			num[i] = rand.nextInt(10);
 		}
 	}
-
 	public static void randomize( int arr[], int n)
 	{
 		Random r = new Random();
@@ -67,6 +81,25 @@ public class Numbers {
 			arr[i] = arr[j];
 			arr[j] = temp;
 		}
+	}
+	public static int findLow(int[]array){
+		int low = array[0];
+		for (int n:array){
+			if (array[n] < low){
+				low = array[n];
+			}
+		}
+		return low;
+	}
+
+	public static int findHigh(int[]array){
+		int high = array[0];
+		for (int n:array){
+			if (array[n] > high){
+				high = array[n];
+			}
+		}
+		return high;
 	}
 	public static void printValue(List<String> array){
 		for(String st:array){
