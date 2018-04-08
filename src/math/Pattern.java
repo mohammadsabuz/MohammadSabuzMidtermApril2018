@@ -20,10 +20,17 @@ public class Pattern {
 						System.out.println(i + " ");
 						count++;
 					} else {
-						for (i = 40; i >= 0; i -= 4) {
-							if (count > 30 && count <= 40) {
+						for (i = 70; i >= 0; i -= 3) {
+							if (count > 20 && count <= 30) {
 								System.out.println(i + " ");
 								count++;
+							} else {
+								for (i = 40; i >= 0; i -= 4) {
+									if (count > 30 && count <= 40) {
+										System.out.println(i + " ");
+										count++;
+									}
+								}
 							}
 						}
 					}

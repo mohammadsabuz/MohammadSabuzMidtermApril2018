@@ -18,6 +18,6 @@ public class UnitTestingMath {
 
         //FindMissingNumber
         int [] array = new int[]{10, 2, 1, 4, 5, 3, 7, 8, 6};
-        Assert.assertEquals(findMissingNumber.findMissingNum(array, 5),2);
+        Assert.assertEquals(findMissingNumber.findMissingNum(array, 10),5);
     }
 }
