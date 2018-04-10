@@ -11,7 +11,7 @@ public class UnitTestingStringProblem {
         Palindrome palindrome = new Palindrome();
         Permutation permutation = new Permutation();
 
-         Assert.assertEquals(anagram.checkAnagram);
+ //       Assert.assertEquals(anagram.checkAnagram(cat, act), );
 
     }
 }
